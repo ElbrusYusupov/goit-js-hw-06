@@ -3,10 +3,10 @@ console.log('Number of categories: ', categoriesEl.children.length);
 
 const itemEl = document.querySelector('.item');
 
-const textTitle = itemEl.querySelector('h2').textContent
+const textTitle = itemEl.firstElementChild.textContent
 
 
-const amountElements = itemEl.querySelectorAll('li').length
+const amountElements = itemEl.lastElementChild.children.length
 
 
 const menuItemsByTag = document.querySelectorAll(".item")
