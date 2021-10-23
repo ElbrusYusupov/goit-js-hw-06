@@ -1,19 +1,28 @@
 const categoriesEl = document.querySelector('#categories')
-console.log('Number of categories: ', categoriesEl.children.length);
 
-const itemEl = document.querySelector('.item');
+const itemEl = categoriesEl.querySelectorAll('.item');
 
-const textTitle = itemEl.firstElementChild.textContent
+const firstTextTitle = itemEl[0].firstElementChild.textContent
+const amountElementsFirst = itemEl[0].lastElementChild.children.length
 
+const secondTextTitle = itemEl[1].firstElementChild.textContent
+const amountElementsSecond = itemEl[1].lastElementChild.children.length
 
-const amountElements = itemEl.lastElementChild.children.length
+const lastTextTitle = itemEl[2].firstElementChild.textContent
+const amountElementsLast = itemEl[2].lastElementChild.children.length
 
+const show = () => {
+    console.log('Number of categories: ', categoriesEl.children.length);
 
-const menuItemsByTag = document.querySelectorAll(".item")
-
-const show  = () => {
-console.log(`Category: ${textTitle}`);
-console.log(`Elements: ${amountElements}`);
+    console.log(`Category: ${firstTextTitle}`);
+    console.log(`Elements: ${amountElementsFirst}`);
+    
+    console.log(`Category: ${secondTextTitle}`);
+    console.log(`Elements: ${amountElementsSecond}`);
+    
+    console.log(`Category: ${lastTextTitle}`);
+    console.log(`Elements: ${amountElementsLast}`);
 };
-
 show()
+
+// Entered
