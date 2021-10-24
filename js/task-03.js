@@ -14,11 +14,59 @@ const images = [
 ];
 
 const galleryEl = document.querySelector('.gallery')
+const elements = images
+  .map(image => `<li class="item"><img src="${image.url} alt="${image.alt} width="360"></img></li>`)
+  .join("");
+  galleryEl.insertAdjacentHTML('beforeend', elements);
 
-const imageEl = document.createElement('img');
-imageEl.addAttribute('src')
+  // Entered
 
-// const item = ingredients.map((ingredient) => `<li">${ingredient}</li>`).join("");
-// ingredientsEl.insertAdjacentHTML('beforeend', item);
 
-console.log(imageEl);
+/* Олдскульный метод___________________________
+const elements = [];
+for (let i = 0; i < images.length; i++) {
+  const option = images[i];
+
+  const imageEl = document.createElement('img');
+  imageEl.src = option.url
+  imageEl.alt = option.alt
+  imageEl.width = 360
+
+  elements.push(imageEl)
+}
+console.log(elements);
+galleryEl.append(...elements)
+*/
+
+/* метод map()_________________________________
+const elements = images.map(option => {
+  const imageEl = document.createElement('img');
+  imageEl.src = option.url
+  imageEl.alt = option.alt
+  imageEl.width = 360
+  return imageEl
+});
+galleryEl.append(...elements)
+*/
+  
+/* метод вызова функции (с использованием map())
+const makeImagesElement = (options) => {
+  return options.map(option => {
+  const imageEl = document.createElement('img');
+  imageEl.src = option.url
+  imageEl.alt = option.alt
+  imageEl.width = 360
+  return imageEl
+  })
+}
+const elements = makeImagesElement(images)
+galleryEl.append(...elements)
+*/
+
+
+  
+  
+
+
+  
+  
